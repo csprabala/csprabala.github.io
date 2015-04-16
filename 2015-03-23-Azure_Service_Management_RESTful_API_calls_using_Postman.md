@@ -2,6 +2,7 @@
 title: Azure Service Management RESTful API calls using Postman
 layout: post
 ---
+# Azure Service Management RESTful API calls using Postman
 
 Postman is a chrome app that can be used to make RESTful API calls. This makes it very ideal if you want to quickly test any Web API. You can install Postman from here. In this post I will describe how to set up your machine so as to use Postman to make calls to Azure Service Management API.
 
