@@ -1,1 +1,9 @@
-gems: [font_awesome]
+name: "Chandrasekhar Prabala"
+description: "My Awesome Blog"
+
+url: "blog.csprabala.com"
+
+paginate: 10
+
+permalink: pretty
+

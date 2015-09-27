@@ -1,0 +1,22 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.post-template{
+  text-align: justify;
+  width: 75%;
+  word-wrap: normal;
+}
+
+.table{
+  width: auto;
+}
+
+.table th, .table td { 
+     border-top: none !important; 
+     text-align: left;
+ }

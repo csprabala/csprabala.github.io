@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+		<title>Azure Service Management RESTful API calls using Postman</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="starter-template">
+        <table class="table table-condensed">
+          <thead>
+        		<tr><th>Chandrasekhar Prabala</th><th></th></tr>
+        		<tr><th></th>
+        		<th><a href="/">Home</a> 
+        		&nbsp;&nbsp;&nbsp;&nbsp; 
+        		<a href="/">Blog</a>
+            </th>
+            </tr>
+        	</thead>
+        </table>
+        <tr>
+  <table class="table table-condensed">
+  <tbody>
+  <tr>
+    <th>Azure Service Management RESTful API calls using Postman</th>
+  </tr>
+  <tr>
+    <td><i>March 23, 2015</i></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="post-template">
+        <p>Postman is a chrome app that can be used to make RESTful API calls. This makes it very ideal if you want to quickly test any Web API. 
+You can install Postman from <a href="https://www.getpostman.com/">here</a>. 
+In this post I will describe how to set up your machine so as to use Postman to make calls to Azure Service Management API.</p>
+
+<p>Step 1:-</p>
+
+<p>If you are a Windows user,</p>
+
+<ol>
+  <li>
+    <p>Use the makecert tool to create a self-signed certificate. The tool comes with your Visual Studio installation. You will find the instructions to do that here.</p>
+  </li>
+  <li>
+    <p>If you do not have Visual Studio, you can download the tool by installing the Windows SDK from here.</p>
+  </li>
+  <li>
+    <p>Next, Generate a .pfx file from the .cer file by following the steps listed <a href="https://technet.microsoft.com/en-us/library/dd261744.aspx">here</a>.</p>
+  </li>
+</ol>
+
+<p>If you are a Linux user,</p>
+
+<ol>
+  <li>
+    <p>Use the steps described <a href="&quot;https://www.linux.com/learn/tutorials/392099-creating-self-signed-ssl-certificates-for-apache-on-linux&quot;">here</a> to generate a .crt file. Rename the .crt file with a .cer extension.</p>
+  </li>
+  <li>
+    <p>Use the command given below to generate a .pfx file</p>
+  </li>
+  <li>
+    <p>openssl pkcs12 -export -out pfxfilename.pfx -inkey securekey.key -in cerfilename.cer</p>
+  </li>
+</ol>
+
+<p>Step 2:-</p>
+
+<ol>
+  <li>
+    <p>Upload the .cer file to the <a href="&quot;https://manage.windowsazure.com&quot;">azure management portal</a> in Settings &gt; Management Certificates</p>
+  </li>
+  <li>
+    <p>Add the .pfx file to Chrome as shown <a href="&quot;https://support.globalsign.com/customer/portal/articles/1211541-install-client-digital-certificate---windows-using-chrome&quot;">here</a>.</p>
+  </li>
+</ol>
+
+<p>You are all set to begin using Postman in Chrome to interact with the Azure Service Management API. The documentation for the REST API is <a href="&quot;https://msdn.microsoft.com/en-us/library/azure/ee460799.aspx&quot;">here</a>.</p>
+
+      </div>
+    </td>
+  <tr>
+  </tbody>
+</table>
+</tr>  
+
+
+
+
+      </div>
+    </div>
+    <footer>
+       <div class="container">
+         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/csprabala/csprabala.github.io" class="text-muted">Fork on Github</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
