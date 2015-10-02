@@ -35,11 +35,13 @@
       <div class="post-template">
         <p>Tags offer an efficient mechanism for associating organizational/user metadata to Azure resources. A typical use case could be to add your environment 
 information such as DEV, TST, PRD to a resource. Another example could be adding BU information such as Finance, HR, Marketing etc.. to a resource. 
-Tags flow down into billing data and can form the basis for your chargeback model. Tags can be created using PowerShell and REST api. A few details 
-on how that can be done are provided <a href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-using-tags/">here</a> and 
-<a href="http://msdn.microsoft.com/library/azure/dn790568.aspx">here</a>. Below are a couple of code samples that illustrate how tagging can be done at the individual
-resource level. A point of note is that tagging at the individual resource level works for the V2 versions of those resources. These resource can be created
-using the ARM (Azure Resource Management) workflows as opposed to using the Classic workflows. For the moment to use the ARM workflow using PowerShell command</p>
+Tags flow down into billing data and can form the basis for your chargeback model. Tags can be created using PowerShell and REST api. An introduction
+and details on adding and retrieving tags at the Resource Group level are provided <a href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-using-tags/">here</a> and 
+<a href="http://msdn.microsoft.com/library/azure/dn790568.aspx">here</a>.</p>
+
+<p>Below are a couple of code samples that illustrate how tagging can be done at the individual
+resource level. A point of note is that tagging at the individual resource level works for the V2 versions of those resource types. These resources can be created
+using the ARM (Azure Resource Management) workflows as opposed to using the Classic workflows. To use the ARM workflows use the following PowerShell command</p>
 
 <pre><code>Switch-AzureMode -Name AzureResourceManagement
 </code></pre>
