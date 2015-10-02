@@ -10,7 +10,7 @@ and details on adding and retrieving tags at the Resource Group level are provid
 [here](http://msdn.microsoft.com/library/azure/dn790568.aspx). 
 
 Below are a couple of code samples that illustrate how tagging can be done at the individual
-resource level. A point of note is that tagging at the individual resource level works for the V2 versions of those resources. These resource can be created
+resource level. A point of note is that tagging at the individual resource level works for the V2 versions of those resource types. These resources can be created
 using the ARM (Azure Resource Management) workflows as opposed to using the Classic workflows. For the moment to use the ARM workflow using PowerShell command
 
 
