@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Working with Tags in Azure</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="starter-template">
+        <table class="table table-condensed">
+          <thead>
+        		<tr><th>Chandrasekhar Prabala</th><th></th></tr>
+        		<tr><th></th>
+        		<th><a href="/">Home</a> 
+        		&nbsp;&nbsp;&nbsp;&nbsp; 
+        		<a href="/">Blog</a>
+            </th>
+            </tr>
+        	</thead>
+        </table>
+        <tr>
+  <table class="table table-condensed">
+  <tbody>
+  <tr>
+    <th>Working with Tags in Azure</th>
+  </tr>
+  <tr>
+    <td><i>October 02, 2015</i></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="post-template">
+        <p>Tags offer an efficient mechanism for associating organizational/user metadata to Azure resources. A typical use case could be to add your environment 
+information such as DEV, TST, PRD to a resource. Another example could be adding BU information such as Finance, HR, Marketing etc.. to a resource. 
+Tags flow down into billing data and can form the basis for your chargeback model. Tags can be created using PowerShell and REST api. A few details 
+on how that can be done are provided <a href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-using-tags/">here</a> and 
+<a href="http://msdn.microsoft.com/library/azure/dn790568.aspx">here</a>. Below are a couple of code samples that illustrate how tagging can be done at the individual
+resource level. A point of note is that tagging at the individual resource level works for the V2 versions of those resources. These resource can be created
+using the ARM (Azure Resource Management) workflows as opposed to using the Classic workflows. For the moment to use the ARM workflow using PowerShell command</p>
+
+<pre><code>Switch-AzureMode -Name AzureResourceManagement
+</code></pre>
+
+<p><em>Using PowerShell to tag Resources:-</em></p>
+
+<p>Obtain the Resource ID. Every resource in Azure has a unique URI that can be used to reference it and fetch its metadata. To obtain the Resource ID for 
+say a VM (TagTestVM) in Resource Group (TagTestResourceGroup), you may use the following PowerShell command.</p>
+
+<pre><code>$resource_id = (Get-AzureVM -ResourceGroupName TagTestResourceGroup -Name TagTestVM).ID
+Set-AzureResource -ResourceId $resource_id -Tag @(@{ Name="TestTag"; Value="TestValue" }) -Force
+</code></pre>
+
+<p><em>Using REST API to tag Resources:-</em></p>
+
+<p>To tag resources using REST API, you need to do submit a HTTP PATCH request to the resource URL</p>
+
+<ol>
+  <li>
+    <p>Construct the URL, It is a combination of https://management.azure.com and the Resource ID of the resource you would like to tag. A fully constructed
+URL for VM will look like</p>
+
+    <p><code>
+ https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Compute/virtualMachines/{VM-Name}
+</code></p>
+  </li>
+  <li>
+    <p>The following headers have to be passed along with the request in the header</p>
+
+    <pre><code> a. Authorization: Bearer {OAUTH TOKEN}
+ b. Content-Type: application/json
+</code></pre>
+  </li>
+  <li>
+    <p>The body of the request has to be json formatted supplying the tag names in the following way.</p>
+
+    <pre><code> {
+ "tags": 
+     {
+         "TestTag": "TestValue"
+     }
+ } 
+</code></pre>
+
+    <p>A point of note, if there are already any tags defined, fetch them and add them to the request body along with the new tags. Otherwise, the older tags
+ will be overwritten.</p>
+  </li>
+  <li>
+    <p>Submit the request and you should see your tags added to the resource.</p>
+  </li>
+</ol>
+
+      </div>
+    </td>
+  <tr>
+  </tbody>
+</table>
+</tr>  
+
+
+
+
+      </div>
+    </div>
+    <footer>
+       <div class="container">
+         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/csprabala/csprabala.github.io" class="text-muted">Fork on Github</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
