@@ -7,7 +7,9 @@ Tags offer an efficient mechanism for associating organizational/user metadata t
 information such as DEV, TST, PRD to a resource. Another example could be adding BU information such as Finance, HR, Marketing etc.. to a resource. 
 Tags flow down into billing data and can form the basis for your chargeback model. Tags can be created using PowerShell and REST api. A few details 
 on how that can be done are provided [here](https://azure.microsoft.com/en-us/documentation/articles/resource-group-using-tags/) and 
-[here](http://msdn.microsoft.com/library/azure/dn790568.aspx). Below are a couple of code samples that illustrate how tagging can be done at the individual
+[here](http://msdn.microsoft.com/library/azure/dn790568.aspx). 
+
+Below are a couple of code samples that illustrate how tagging can be done at the individual
 resource level. A point of note is that tagging at the individual resource level works for the V2 versions of those resources. These resource can be created
 using the ARM (Azure Resource Management) workflows as opposed to using the Classic workflows. For the moment to use the ARM workflow using PowerShell command
 
