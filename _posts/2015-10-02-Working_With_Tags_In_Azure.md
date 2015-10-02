@@ -5,8 +5,8 @@ layout: post
 
 Tags offer an efficient mechanism for associating organizational/user metadata to Azure resources. A typical use case could be to add your environment 
 information such as DEV, TST, PRD to a resource. Another example could be adding BU information such as Finance, HR, Marketing etc.. to a resource. 
-Tags flow down into billing data and can form the basis for your chargeback model. Tags can be created using PowerShell and REST api. A few details 
-on how that can be done are provided [here](https://azure.microsoft.com/en-us/documentation/articles/resource-group-using-tags/) and 
+Tags flow down into billing data and can form the basis for your chargeback model. Tags can be created using PowerShell and REST api. An introduction
+and details on adding and retrieving tags at the Resource Group level are provided [here](https://azure.microsoft.com/en-us/documentation/articles/resource-group-using-tags/) and 
 [here](http://msdn.microsoft.com/library/azure/dn790568.aspx). 
 
 Below are a couple of code samples that illustrate how tagging can be done at the individual
