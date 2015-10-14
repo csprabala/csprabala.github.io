@@ -56,5 +56,5 @@ The above solution is very specific to the project that I am working on. Its an 
  The right way to resolve the problem is to pass modules while constructing the object graph itself as shown below.
 
     import pinject
-		obj_graph = pinject.new_obj_graph(modules=[md for md in sys.modules.values() if md is not None 
+		obj_graph = pinject.new_object_graph(modules=[md for md in sys.modules.values() if md is not None 
 		                                           and str(md.__name__).startswith('mycode')])
