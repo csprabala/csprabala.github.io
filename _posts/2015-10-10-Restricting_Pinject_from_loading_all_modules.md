@@ -45,6 +45,7 @@ function that I define. This function filters the modules that Pinject has to in
 				
 and then in the root I write the following to replace pinject's function with mine.
 
+    import pinject.finding
     finding._get_explicit_or_default_modules = my_get_explicit_or_default_modules
 		
 This gets me around issues 1 and 2.
