@@ -26,8 +26,9 @@ package/module from which the class were referenced. As an example consider the 
  be injected with Authentication object defined in mycode.authentication module in cases where it detects Authentication class
  else where lets say in httplib2.Authentication. 
  
-Below is my solution to the problem. In the application root, I replace __get_explicit_or_default_modules with a 
-function that I define. This function filters the modules that Pinject has to inspect to inject objects into my classes.
+Below is my solution to the problem. In the application root, I replace _get_explicit_or_default_modules that is defined in 
+pinject.finding module with a function that I define. This function filters the modules that Pinject has to inspect to 
+inject objects into my classes.
 
 	  def my_get_explicit_or_default_modules(modules):
 	  """
