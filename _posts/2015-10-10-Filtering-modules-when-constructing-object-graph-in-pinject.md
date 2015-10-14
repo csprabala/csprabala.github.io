@@ -57,4 +57,4 @@ The above solution is very specific to the project that I am working on. Its an 
 
     import pinject
 		obj_graph = pinject.new_object_graph(modules=[md for md in sys.modules.values() if md is not None 
-		                                           and str(md.__name__).startswith('mycode')])
+		                                              and str(md.__name__).startswith('mycode')])
