@@ -1,5 +1,5 @@
 ---
-title: Restricting Pinject to load only appropriate modules
+title: Filtering modules when constructing object graph in pinject
 layout: post
 ---
 
@@ -22,9 +22,10 @@ package/module from which the class were referenced. As an example consider the 
 		  def __init__(self, authentication):
 		    pass 
 				
- When Pinject tries to create an object of TestClass, it doesn't automatically identify that authentication field needs to
- be injected with Authentication object defined in mycode.authentication module in cases where it detects Authentication class
- else where lets say in httplib2.Authentication. 
+ When Pinject tries to create an object of TestClass, in cases where it detects more than one Authentication class
+ lets say in httplib2.Authentication along with Authenctication defined in mycode.authentication, it doesn't automatically 
+ identify that authentication field needs to be injected with Authentication object defined in mycode.authentication module. 
+ It throws a class name conflict exception.
  
 Below is my solution to the problem. In the application root, I replace _get_explicit_or_default_modules that is defined in 
 pinject.finding module with a function that I define. This function filters the modules that Pinject has to inspect to 
