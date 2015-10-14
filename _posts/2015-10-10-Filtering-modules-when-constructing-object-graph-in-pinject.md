@@ -51,3 +51,10 @@ and then in the root I write the following to replace pinject's function with mi
     finding._get_explicit_or_default_modules = my_get_explicit_or_default_modules
 		
 This gets me around issues 1 and 2.
+
+The above solution is very specific to the project that I am working on. Its an awkward hack and not intended as a general solution.
+ The right way to resolve the problem is to pass modules while constructing the object graph itself as shown below.
+
+    import pinject
+		obj_graph = pinject.new_obj_graph(modules=[md for md in sys.modules.values() if md is not None 
+		                                           and str(md.__name__).startswith('mycode')])
